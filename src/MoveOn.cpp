@@ -11,6 +11,7 @@
 #include "Mesh.hpp"
 #include "Shader.hpp"
 #include "FPScounter.hpp"
+#include "Inputprocessor.hpp"
 
 Scene scene;
 bool firstMouse = true;
@@ -103,6 +104,12 @@ void processInput(GLFWwindow *window, float deltaTime)
         cam->pitch = -89.0f;
 
     cam->UpdateViewMatrix();
+}
+
+bool moveUp(Mesh* mesh, float deltaTime){
+    mesh->Translation(2.0f, 18.0f, 4.0f);
+    std::cout <<"ok";
+    return true;
 }
 
 int main()
@@ -207,6 +214,9 @@ int main()
     sphere2.SetupMesh();
     scene.AddMesh(&sphere2);
 
+    InputProcessor inputProcessor(window);
+    inputProcessor.addInput(GLFW_KEY_SPACE, &sphere2, moveUp);
+
     auto lastTime = std::chrono::high_resolution_clock::now();
     float fps = 0.0f;
     int frameCount = 0;
@@ -222,6 +232,7 @@ int main()
         float deltaTime = static_cast<float>(glfwTimeElapsedCurrentFrame - glfwTimeElapsedLastFrame);
         glfwTimeElapsedLastFrame = glfwTimeElapsedCurrentFrame;
         processInput(window, deltaTime);
+        inputProcessor.processAll(deltaTime);
 
         glClearColor(0.2f, 0.25f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
