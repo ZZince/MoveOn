@@ -1,32 +1,142 @@
-# Prerequisites
-*.d
 
-# Compiled Object files
+# ==========================================
+# MoveOn - .gitignore
+# ==========================================
+
+# ------------------------------------------
+# CMake / Ninja
+# ------------------------------------------
+build/
+build-*/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+.ninja_deps
+.ninja_log
+build.ninja
+rules.ninja
+Testing/
+
+# ------------------------------------------
+# GCC / MinGW - Fichiers intermediaires
+# ------------------------------------------
+*.d
 *.slo
 *.lo
 *.o
 *.obj
-
-# Precompiled Headers
 *.gch
 *.pch
+*.gcda
+*.gcno
+*.gcov
 
-# Compiled Dynamic libraries
+# ------------------------------------------
+# Bibliotheques compilees
+# ------------------------------------------
 *.so
 *.dylib
 *.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
+*.dll.a
 *.a
 *.lib
+*.lai
+*.la
 
-# Executables
+# ------------------------------------------
+# IMPORTANT : Bibliotheques OpenGL locales
+# On conserve ces dependances dans Git
+# ------------------------------------------
+!OpenGL/
+!OpenGL/**/
+
+!OpenGL/**/*.dll
+!OpenGL/**/*.dll.a
+!OpenGL/**/*.a
+!OpenGL/**/*.lib
+
+# ------------------------------------------
+# Executables generes
+# ------------------------------------------
 *.exe
 *.out
 *.app
+
+# ------------------------------------------
+# Debug / Windows
+# ------------------------------------------
+*.pdb
+*.ilk
+*.idb
+*.exp
+*.map
+*.stackdump
+*.core
+core
+
+# ------------------------------------------
+# Visual Studio
+# ------------------------------------------
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+ipch/
+x64/
+Debug/
+Release/
+RelWithDebInfo/
+MinSizeRel/
+# ------------------------------------------
+# VS Code
+# Conserver les configurations partagees
+# ------------------------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ------------------------------------------
+# Fichiers temporaires
+# ------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.orig
+*.swp
+*.swo
+*~
+*.log
+
+# ------------------------------------------
+# Python
+# ------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# ------------------------------------------
+# Systeme d'exploitation
+# ------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ------------------------------------------
+# Fichiers IDE JetBrains
+# ------------------------------------------
+.idea/
+
+# ------------------------------------------
+# Fichiers de sauvegarde
+# ------------------------------------------
+*.backup
+*_backup/

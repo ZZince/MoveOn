@@ -1,0 +1,1 @@
+/*Objet unique référençant toutes les touches utilisables, la reliure a quelle objet et possibilité de link une fonction qui sera appelée */
