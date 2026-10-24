@@ -1,3 +1,4 @@
+#version 330 core
 #define MAX_LIGHTS 8
 
 struct LightData {

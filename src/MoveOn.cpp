@@ -130,6 +130,7 @@ int main()
     }
 
     glfwMakeContextCurrent(window);
+    glfwSwapInterval(0);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
     if (glewInit() != GLEW_OK)
