@@ -1,6 +1,4 @@
-#ifndef FACE_H
-#define FACE_H
-
+#pragma once
 #include <vector>
 #include "Vertice.hpp"
 
@@ -12,9 +10,7 @@ public:
     float nx, ny, nz;
 
     Face() : nx(0), ny(0), nz(0) {}
-	Face(const std::vector<int>& indices) : vertIndices(indices), nx(0), ny(0), nz(0) {}
+    Face(const std::vector<int> &indices) : vertIndices(indices), nx(0), ny(0), nz(0) {}
 
-    void CalculNormal(const std::vector<Vertice>& vertices);
+    void CalculNormal(const std::vector<Vertice> &vertices);
 };
-
-#endif

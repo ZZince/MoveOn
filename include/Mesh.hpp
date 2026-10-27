@@ -1,6 +1,4 @@
-#ifndef MESH_H
-#define MESH_H
-
+#pragma once
 #include <vector>
 #include <OpenGL/GLM/glm/glm.hpp>
 #include "Vertice.hpp"
@@ -30,5 +28,3 @@ public:
 
     void SetShader(Shader *shader) { m_shader = shader; }
 };
-
-#endif

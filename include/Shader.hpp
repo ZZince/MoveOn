@@ -1,6 +1,4 @@
-#ifndef SHADER_H
-#define SHADER_H
-
+#pragma once
 #include <string>
 #include <OpenGL/GLM/glm/glm.hpp>
 
@@ -22,5 +20,3 @@ private:
     unsigned int CompileShader(unsigned int type, const std::string &source) const;
     void CheckCompileErrors(unsigned int shader, const std::string &type) const;
 };
-
-#endif

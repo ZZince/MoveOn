@@ -1,6 +1,4 @@
-#ifndef CAMERA_H
-#define CAMERA_H
-
+#pragma once
 #include <OpenGL/GLM/glm/glm.hpp>
 #include <OpenGL/GLM/glm/gtc/matrix_transform.hpp>
 
@@ -22,5 +20,3 @@ public:
 private:
     void UpdateCameraVectors(glm::vec3 &front, glm::vec3 &up);
 };
-
-#endif
