@@ -184,9 +184,7 @@ int main()
         auto cubeMesh = std::make_shared<Mesh>();
 
         cubeMesh->CreateQuad({1.0f, 1.0f, 1.0f});
-        cubeMesh->SetShader(&basicShader);
-        cubeMesh->Change_Color(0.0f, 0.0f, 1.0f);
-        cubeMesh->ComputeNormals();
+        cubeMesh->SetShader(&basicShader);        cubeMesh->ComputeNormals();
         cubeMesh->SetupMesh();
 
         Scene scene;
@@ -254,11 +252,8 @@ int main()
             processInput(window, camera, deltaTime);
             inputProcessor.processAll(deltaTime);
 
-            // rotatingCube->getTransform().rotate(
-            //  45.0f * deltaTime,
-            // glm::vec3(0.0f, 1.0f, 0.0f));
-
-            // rotatingCube2->getTransform().rotate(165.0f * deltaTime, glm::vec3(1.0f, 1.0f, 1.0f));
+            rotatingCube->getTransform().rotate(45.0f * deltaTime,glm::vec3(0.0f, 1.0f, 0.0f));
+            rotatingCube2->getTransform().rotate(165.0f * deltaTime, glm::vec3(1.0f, 1.0f, 1.0f));
 
             scene.update(deltaTime);
 

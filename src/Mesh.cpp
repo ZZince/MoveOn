@@ -118,26 +118,6 @@ void Mesh::Render() const
     glBindVertexArray(0);
 }
 
-void Mesh::Translation(float x, float y, float z)
-{
-    for (auto &vertice : m_vertices)
-    {
-        vertice.x += x;
-        vertice.y += y;
-        vertice.z += z;
-    }
-}
-
-void Mesh::Change_Color(float r, float g, float b)
-{
-    for (auto &vertice : m_vertices)
-    {
-        vertice.r = r;
-        vertice.g = g;
-        vertice.b = b;
-    }
-}
-
 void Mesh::CreateQuad(std::vector<float> size)
 {
     if (size.size() < 3)
