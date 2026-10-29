@@ -1,21 +1,6 @@
+#include "Utilities/FPSCounter.hpp"
 
-#pragma once
-
-#include <chrono>
-#include <cstdint>
-
-class FPSCounter
-{
-public:
-    using Clock = std::chrono::steady_clock;
-
-    explicit FPSCounter(double updateInterval = 1.0)
-        : m_updateInterval(updateInterval),
-          m_lastUpdate(Clock::now())
-    {
-    }
-
-    bool Update()
+bool FPSCounter::Update()
     {
         ++m_frameCount;
 
@@ -37,22 +22,12 @@ public:
         return true;
     }
 
-    double GetFPS() const
+double FPSCounter::GetFPS() const
     {
         return m_fps;
     }
 
-    double GetFrameTime() const
+double FPSCounter::GetFrameTime() const
     {
         return m_frameTime;
     }
-
-private:
-    double m_updateInterval;
-    Clock::time_point m_lastUpdate;
-
-    std::uint64_t m_frameCount = 0;
-
-    double m_fps = 0.0;
-    double m_frameTime = 0.0;
-};

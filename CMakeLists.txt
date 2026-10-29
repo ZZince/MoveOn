@@ -14,7 +14,7 @@ endif()
 set(OPENGL_DIR "${CMAKE_SOURCE_DIR}/OpenGL")
 
 # Tous les fichiers sources de MoveOn
-file(GLOB SOURCES CONFIGURE_DEPENDS
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
     "${CMAKE_SOURCE_DIR}/src/*.cpp"
 )
 

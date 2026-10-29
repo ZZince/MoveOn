@@ -1,6 +1,7 @@
 #include <OpenGL/GLFW/glfw3.h>
-#include "InputProcessor.hpp"
-#include "Mesh.hpp"
+
+#include "Utilities/InputProcessor.hpp"
+#include "Geometry/Mesh.hpp"
 
 Input::Input(
     Mesh* mesh,

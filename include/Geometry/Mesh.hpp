@@ -1,9 +1,12 @@
 #pragma once
-#include <vector>
+
 #include <OpenGL/GLM/glm/glm.hpp>
-#include "Vertice.hpp"
-#include "Face.hpp"
-#include "Shader.hpp"
+
+#include <vector>
+
+#include "Geometry/Vertice.hpp"
+#include "Geometry/Face.hpp"
+#include "Graphics/Shader.hpp"
 
 class Mesh
 {

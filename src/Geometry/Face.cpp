@@ -1,6 +1,7 @@
-#include "Face.hpp"
 #include <OpenGL/GLM/glm/glm.hpp>
 #include <OpenGL/GLM/glm/glm.hpp>
+
+#include "Geometry/Face.hpp"
 
 void Face::CalculNormal(const std::vector<Vertice> &vertices)
 {

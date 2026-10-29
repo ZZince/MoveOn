@@ -1,9 +1,11 @@
-#include "Shader.hpp"
 #include <OpenGL/GLEW/glew.h>
 #include <OpenGL/GLM/glm/gtc/type_ptr.hpp>
+
 #include <fstream>
 #include <sstream>
 #include <iostream>
+
+#include "Graphics/Shader.hpp"
 
 Shader::Shader(const char *vertexPath, const char *fragmentPath)
 {

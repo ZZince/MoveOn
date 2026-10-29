@@ -1,6 +1,8 @@
 #pragma once
-#include <string>
+
 #include <OpenGL/GLM/glm/glm.hpp>
+
+#include <string>
 
 class Shader
 {

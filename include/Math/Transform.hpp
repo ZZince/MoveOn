@@ -1,9 +1,10 @@
 #pragma once
-#include <vector>
-#include <cstdio>
-#include <memory>
+
 #include <OpenGL/GLM/glm/glm.hpp>
 #include <OpenGL/GLM/glm/gtc/quaternion.hpp>
+
+#include <vector>
+#include <memory>
 
 class Transform
 {

@@ -8,15 +8,15 @@
 #include <string>
 #include <cmath>
 
-#include "Scene.hpp"
-#include "Camera.hpp"
-#include "Mesh.hpp"
-#include "Shader.hpp"
-#include "Renderer.hpp"
-#include "MoveOnObject.hpp"
-#include "RendableComponent.hpp"
-#include "FPScounter.hpp"
-#include "Inputprocessor.hpp"
+#include "Core/Scene.hpp"
+#include "Core/MoveOnObject.hpp"
+#include "Graphics/Camera.hpp"
+#include "Graphics/Shader.hpp"
+#include "Graphics/Renderer.hpp"
+#include "Geometry/Mesh.hpp"
+#include "Components/RenderableComponent.hpp"
+#include "Utilities/FPSCounter.hpp"
+#include "Utilities/Inputprocessor.hpp"
 
 constexpr float cameraSpeed = 3.0f;
 constexpr float rotationSpeed = 90.0f;
@@ -195,7 +195,7 @@ int main()
         cube1->getTransform().setPosition(
             glm::vec3(-2.0f, 0.0f, 0.0f));
 
-        auto rendable1 = std::make_unique<RendableComponent>();
+        auto rendable1 = std::make_unique<RenderableComponent>();
         rendable1->setMesh(cubeMesh);
         cube1->addComponent(std::move(rendable1));
         scene.addObject(std::move(cube1));
@@ -209,7 +209,7 @@ int main()
             45.0f,
             glm::vec3(0.0f, 0.0f, 1.0f));
 
-        auto rendable2 = std::make_unique<RendableComponent>();
+        auto rendable2 = std::make_unique<RenderableComponent>();
         rendable2->setColor({0.5f, 0.0f, 1.0f});
         rendable2->setMesh(cubeMesh);
 
@@ -227,7 +227,7 @@ int main()
             glm::vec3(1.0f, 0.0f, 0.5f));
         cube3->getTransform().setScale(glm::vec3(0.5f, 0.2f, 0.5f));
 
-        auto rendable3 = std::make_unique<RendableComponent>();
+        auto rendable3 = std::make_unique<RenderableComponent>();
         rendable3->setMesh(cubeMesh);
         rendable3->setColor({1.0f, 0.0f, 0.0f});
 

@@ -1,4 +1,4 @@
-#include "Light.hpp"
+#include "Graphics/Light.hpp"
 
 Light::Light(float posX, float posY, float posZ,
     float red, float green, float blue)

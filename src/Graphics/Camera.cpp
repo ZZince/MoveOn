@@ -1,4 +1,4 @@
-#include "Camera.hpp"
+#include "Graphics/Camera.hpp"
 
 Camera::Camera(float startX, float startY, float startZ)
     : x(startX), y(startY), z(startZ),

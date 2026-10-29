@@ -1,7 +1,10 @@
-#include "Mesh.hpp"
 #include <OpenGL/GLEW/glew.h>
+
 #include <iostream>
 #include <cmath>
+
+#include "Geometry/Mesh.hpp"
+
 #define M_PI 3.14159265358979323846
 
 Mesh::Mesh()

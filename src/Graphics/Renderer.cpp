@@ -1,7 +1,8 @@
-#include "Renderer.hpp"
-#include "RendableComponent.hpp"
-#include "Mesh.hpp"
 #include <OpenGL/GLM/glm/glm.hpp>
+
+#include "Graphics/Renderer.hpp"
+#include "Components/RenderableComponent.hpp"
+#include "Geometry/Mesh.hpp"
 
 Renderer::Renderer() = default;
 void Renderer::render(const Scene *scene, const Camera *camera) const
@@ -10,7 +11,7 @@ void Renderer::render(const Scene *scene, const Camera *camera) const
     {
         return;
     }
-    const RendableComponent *rendableComponent;
+    const RenderableComponent *rendableComponent;
     const Mesh *mesh;
     const Shader *shader;
 
@@ -18,7 +19,7 @@ void Renderer::render(const Scene *scene, const Camera *camera) const
     glm::mat4 worldMatrix;
     for (auto &object : scene->getObjects())
     {
-        rendableComponent = object->findComponent<RendableComponent>();
+        rendableComponent = object->findComponent<RenderableComponent>();
         if (!rendableComponent)
         {
             continue;

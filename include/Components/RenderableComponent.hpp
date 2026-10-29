@@ -1,9 +1,13 @@
 #pragma once
-#include "Component.hpp"
-#include "Mesh.hpp"
+
 #include "OpenGL/GLM/glm/glm.hpp"
+
 #include <memory>
-class RendableComponent : public Component
+
+#include "Core/Component.hpp"
+#include "Geometry/Mesh.hpp"
+
+class RenderableComponent : public Component
 {
 public:
     void setVisibility(bool visibility);

@@ -1,6 +1,7 @@
-#include "Scene.hpp"
-#include "Camera.hpp"
-#include "Shader.hpp"
+#include "Core/Scene.hpp"
+#include "Graphics/Camera.hpp"
+#include "Graphics/Shader.hpp"
+
 class Renderer
 {
 public:

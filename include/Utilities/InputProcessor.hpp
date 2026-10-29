@@ -1,10 +1,12 @@
 #pragma once
+
 #include <OpenGL/GLFW/glfw3.h>
-#include <cstdio>
+
 #include <unordered_map>
 #include <vector>
 #include <memory>
-#include "Mesh.hpp"
+
+#include "Geometry/Mesh.hpp"
 
 class Input
 {

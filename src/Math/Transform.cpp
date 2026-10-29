@@ -1,5 +1,6 @@
-#include "Transform.hpp"
 #include <OpenGL/GLM/glm/gtc/matrix_transform.hpp>
+
+#include "Math/Transform.hpp"
 
 Transform::Transform() = default;
 Transform::Transform(const glm::vec3 &position, const glm::vec3 &scale, const glm::vec3 &rotation)

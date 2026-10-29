@@ -1,6 +1,8 @@
 #pragma once
+
 #include <vector>
-#include "Vertice.hpp"
+
+#include "Geometry/Vertice.hpp"
 
 class Face
 {
