@@ -1,25 +1,25 @@
 #include "Scene.hpp"
-#include <iostream>
 
-Scene::Scene()
+void Scene::addObject(std::unique_ptr<MoveOnObject> object)
 {
+    m_objects.push_back(std::move(object));
 }
 
-void Scene::AddMesh(Mesh* mesh)
+void Scene::update(float deltatime)
 {
-    m_meshes.push_back(mesh);
+    for (auto &m_object : m_objects)
+    {
+        m_object->update(deltatime);
+    }
 }
 
-void Scene::AddLight(Light* light)
+const std::vector<std::unique_ptr<MoveOnObject>> &Scene::getObjects() const
 {
-    m_lights.push_back(light);
+    return m_objects;
 }
 
-void Scene::AddCamera(Camera* camera)
-{
-    m_cameras.push_back(camera);
-}
-
+Scene::Scene() = default;
+/*
 void Scene::Render()
 {
     if (m_cameras.empty())
@@ -56,7 +56,7 @@ void Scene::Render()
                 mesh->m_shader->setUniform3f(colorName, light->r, light->g, light->b);
             }
 
-			mesh->m_shader->setUniform3f("objectColor", mesh->m_vertices[0].r, mesh->m_vertices[0].g, mesh->m_vertices[0].b);
+            mesh->m_shader->setUniform3f("objectColor", mesh->m_vertices[0].r, mesh->m_vertices[0].g, mesh->m_vertices[0].b);
             mesh->m_shader->setUniform("edgeThreshold", 0.2f);
             mesh->m_shader->setUniform("ambientStrength", 0.2f);
             mesh->m_shader->setUniform("specularStrength", 0.5f);
@@ -66,6 +66,4 @@ void Scene::Render()
         }
     }
 }
-
-
-
+*/

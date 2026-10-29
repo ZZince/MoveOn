@@ -14,17 +14,15 @@ class MoveOnObject
 {
 public:
     void setTransform(Transform transform);
-    void setMesh(std::shared_ptr<Mesh> mesh);
     void setParent(MoveOnObject *parent);
     const Transform &getTransform() const;
     Transform &getTransform();
-    Mesh *getMesh() const;
-    MoveOnObject *getParent();
+    MoveOnObject *getParent() const;
     void addComponent(std::unique_ptr<Component> component);
     template <typename T>
     bool delComponent();
     template <typename T>
-    T *findComponent();
+    const T *findComponent() const;
     MoveOnObject();
     MoveOnObject(const Transform transform, std::shared_ptr<Mesh> mesh);
     MoveOnObject(
@@ -38,13 +36,12 @@ public:
 
 private:
     Transform m_transform;
-    std::shared_ptr<Mesh> m_mesh = nullptr;
     std::vector<std::unique_ptr<Component>> m_components;
     MoveOnObject *m_parent = nullptr;
 };
 
 template <typename T>
-T *MoveOnObject::findComponent()
+const T *MoveOnObject::findComponent() const
 {
     auto it = std::find_if(
         m_components.begin(), m_components.end(), [](const std::unique_ptr<Component> &component)

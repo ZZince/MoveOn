@@ -1,20 +1,16 @@
 #pragma once
 #include <vector>
-#include "Mesh.hpp"
-#include "Light.hpp"
-#include "Camera.hpp"
+#include <memory>
+#include "MoveOnObject.hpp"
 
 class Scene
 {
 public:
-    std::vector<Mesh *> m_meshes;
-    std::vector<Light *> m_lights;
-    std::vector<Camera *> m_cameras;
-
     Scene();
-    void AddMesh(Mesh *mesh);
-    void AddLight(Light *light);
-    void AddCamera(Camera *camera);
+    void addObject(std::unique_ptr<MoveOnObject> object);
+    void update(float deltatime);
+    const std::vector<std::unique_ptr<MoveOnObject>> &getObjects() const;
 
-    void Render();
+private:
+    std::vector<std::unique_ptr<MoveOnObject>> m_objects;
 };

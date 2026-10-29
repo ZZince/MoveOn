@@ -107,12 +107,8 @@ void Mesh::ComputeNormals()
     }
 }
 
-void Mesh::Render()
+void Mesh::Render() const
 {
-    if (m_shader)
-    {
-        m_shader->Use();
-    }
 
     glBindVertexArray(VAO);
 

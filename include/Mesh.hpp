@@ -22,7 +22,7 @@ public:
 
     void SetupMesh();
     void ComputeNormals();
-    void Render();
+    void Render() const;
     void Change_Color(float r, float g, float b);
     void Translation(float x, float y, float z);
 

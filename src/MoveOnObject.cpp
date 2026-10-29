@@ -9,13 +9,11 @@ MoveOnObject::MoveOnObject()
 MoveOnObject::MoveOnObject(const Transform transform, std::shared_ptr<Mesh> mesh)
 {
     m_transform = transform;
-    m_mesh = mesh;
 }
 
 MoveOnObject::MoveOnObject(const Transform &transform, std::shared_ptr<Mesh> mesh, std::vector<std::unique_ptr<Component>> components)
 {
     m_transform = transform;
-    m_mesh = mesh;
     m_components = std::move(components);
 }
 
@@ -28,11 +26,6 @@ MoveOnObject::MoveOnObject(Transform transform, std::vector<std::unique_ptr<Comp
 void MoveOnObject::setTransform(Transform transform)
 {
     m_transform = transform;
-}
-
-void MoveOnObject::setMesh(std::shared_ptr<Mesh> mesh)
-{
-    m_mesh = std::move(mesh);
 }
 
 void MoveOnObject::setParent(MoveOnObject *parent)
@@ -76,11 +69,6 @@ void MoveOnObject::update(float deltaTime)
 const Transform &MoveOnObject::getTransform() const
 {
     return m_transform;
-}
-
-Mesh *MoveOnObject::getMesh() const
-{
-    return m_mesh.get();
 }
 
 Transform &MoveOnObject::getTransform()
