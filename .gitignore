@@ -75,7 +75,10 @@ Testing/
 *.map
 *.stackdump
 *.core
-core
+
+# Core dumps Linux/Unix
+/core
+/core.*
 
 # ------------------------------------------
 # Visual Studio
