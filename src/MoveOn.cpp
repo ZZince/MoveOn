@@ -15,6 +15,7 @@
 #include "Graphics/Renderer.hpp"
 #include "Geometry/Mesh.hpp"
 #include "Components/RenderableComponent.hpp"
+#include "Components/RotationComponent.hpp"
 #include "Utilities/FPSCounter.hpp"
 #include "Utilities/Inputprocessor.hpp"
 
@@ -184,7 +185,8 @@ int main()
         auto cubeMesh = std::make_shared<Mesh>();
 
         cubeMesh->CreateQuad({1.0f, 1.0f, 1.0f});
-        cubeMesh->SetShader(&basicShader);        cubeMesh->ComputeNormals();
+        cubeMesh->SetShader(&basicShader);
+        cubeMesh->ComputeNormals();
         cubeMesh->SetupMesh();
 
         Scene scene;
@@ -231,6 +233,10 @@ int main()
         rendable3->setMesh(cubeMesh);
         rendable3->setColor({1.0f, 0.0f, 0.0f});
 
+        auto rotationComponent = std::make_unique<RotationComponent>();
+        rotationComponent->setRotation(165.0f, {1.0f, 1.0f, 1.0f});
+        cube3->addComponent(std::move(rotationComponent));
+
         cube3->addComponent(std::move(rendable3));
         MoveOnObject *rotatingCube2 = cube3.get();
         scene.addObject(std::move(cube3));
@@ -251,9 +257,6 @@ int main()
 
             processInput(window, camera, deltaTime);
             inputProcessor.processAll(deltaTime);
-
-            rotatingCube->getTransform().rotate(45.0f * deltaTime,glm::vec3(0.0f, 1.0f, 0.0f));
-            rotatingCube2->getTransform().rotate(165.0f * deltaTime, glm::vec3(1.0f, 1.0f, 1.0f));
 
             scene.update(deltaTime);
 

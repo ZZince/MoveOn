@@ -56,6 +56,7 @@ void MoveOnObject::addComponent(std::unique_ptr<Component> component)
     {
         return;
     }
+    component->setOwner(this);
     m_components.push_back(std::move(component));
 }
 
